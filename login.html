@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>个人登录</title>
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/base.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+
+		<script src="js/jquery-1.8.3.min.js"></script>
+		<script src="js/login.js"></script>
+		<script src="ajax3.0.js"></script>
+	</head>
+
+	<body>
+		<!--head-->
+		<div class="wrapper clearfix">
+			<div class="login-logo">
+				<a href="#"><img src="img/login-logo.png" alt="" /></a>
+				<b></b>
+			</div>
+			<a href="#"><b></b>
+				登录页面，调查问卷
+			</a>
+		</div>
+		<!--content-->
+		<div class="content">
+			<div class="tips-wrapper">
+				<div class="tips-inner">
+					<div class="con-wrapper">
+						<i></i>
+						<p>依据《网络安全法》，为保障您的账户安全和正常使用，请尽快完成手机号验证！ 新版<a href="#">《京东隐私政策》</a>已上线，将更有利于保护您的个人隐私。</p>
+					</div>
+				</div>
+			</div>
+			<div class="login-wrap">
+				<div class="w clearfix">
+					<div id="move">
+						<div class="login-form">
+							<div class="tips-wrapper">
+								<div class="tips-inner">
+									<div class="con-wrapper">
+										<i></i>
+										<p>京东不会以任何理由要求您转账汇款，谨防诈骗。</p>
+									</div>
+								</div>
+							</div>
+							<div class="login-tab login-tab-l">
+								<a href="#">扫码登录</a>
+							</div>
+							<div class="login-tab login-tab-r">
+								<a href="#">账号登录</a>
+							</div>
+							<div class="login-box">
+								<div class="tab-h"></div>
+								<div class="msg-wrap">
+									<div class="msg-error">
+										<b></b>
+									</div>
+								</div>
+								<div class="mc">
+									<div class="form">
+										<div class="item item-fore1">
+											<label for="loginname" class="login-label name-label"></label>
+											<input type="text" id="loginname" class="itxt" /placeholder="邮箱/用户名/已验证手机">
+											<span id="info"></span>
+										</div>
+										<div class="item item-fore2">
+											<label for="loginpwd" class="pwd-label name-label"></label>
+											<input type="password" id="loginpwd" class="ipwd" /placeholder="密码">
+										</div>
+										<div class="item-fore4">
+											<div class="safe">
+												<span></span>
+												<span><a href="#">忘记密码</a></span>
+											</div>
+										</div>
+										<div class="item-fore5">
+											<div class="login-btn">
+												<a href="#">登录</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="coagent">
+								<ul>
+									<li><a href="#"><b></b><span>QQ</span></a><span>|</span></li>
+									<li><a href="#"><b></b><span>微信</span></a><span>|</span></li>
+									<li class="extra-r">
+										<div class="regist-link">
+											<a href="zhuce.html"><b></b>立即注册</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div class="login-banner">
+					<div class="w">
+						<div class="banner-bg"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="w">
+			<footer>
+				<div class="footer">
+					<div class="footer-one">
+						<div class="footer-one-a">
+							<ul>
+								<li><a href="#">关于我们</a></li>
+								<li><a href="#">|</a></li>
+								<li><a href="#">联系我们</a></li>
+								<li><a href="#">|</a></li>
+								<li><a href="#">人才招聘 </a></li>
+								<li><a href="#">|</a></li>
+								<li><a href="#">商家入驻</a></li>
+								<li><a href="#">|</a></li>
+								<li><a href="#">广告服务</a></li>
+								<li><a href="#">|</a></li>
+								<li><a href="#">手机京东 </a></li>
+								<li><a href="#">|</a></li>
+								<li><a href="#">友情链接</a></li>
+								<li><a href="#">|</a></li>
+								<li><a href="#">销售联盟</a></li>
+								<li><a href="#">|</a></li>
+								<li><a href="#">京东社区 </a></li>
+								<li><a href="#">|</a></li>
+								<li><a href="#">京东公益</a></li>
+								<li><a href="#">|</a></li>
+								<li><a href="#">English Site</a></li>
+							</ul>
+						</div>
+						<div class="footer-one-b">
+							<ul>
+								<li><a href="#">Copyright©2004-2018 </a></li>
+								<li><a href="#"> 京东JD.com 版权所有</a></li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+	<script>
+		//获取对象
+		var div = document.getElementById("move");
+
+		//按下事件
+		div.onmousedown = function(ev) {
+			//事件兼容对象
+			var evt = ev || event;
+			//alert(evt.clientX+":"+evt.clientY);
+			//alert(div.offsetLeft+":"+div.offsetTop);
+
+			//获取 鼠标位置与div之间的距离
+			var dx = evt.clientX - div.offsetLeft;
+			var dy = evt.clientY - div.offsetTop;
+			//alert(dx+":"+dy);
+
+			//设置鼠标移动事件
+			document.onmousemove = function(ev) {
+				var evt = ev || event;
+				//获取移动距离 鼠标位置-距离值=移动值
+				var l = evt.clientX - dx;
+				var t = evt.clientY - dy;
+				console.log(l + ":" + t);
+
+				//l t 判断最大和最小移动值
+				if (l < 0) {
+					l = 0;
+				} else if (l > document.documentElement.clientWidth - div.offsetWidth) {
+					l = document.documentElement.clientWidth - div.offsetWidth;
+				}
+
+				if (t < 0) {
+					t = 0;
+				} else if (t > document.documentElement.clientHeight - div.offsetHeight) {
+					t = document.documentElement.clientHeight - div.offsetHeight;
+				}
+
+				//现有div赋值新的位置
+				div.style.left = l + 'px';
+				div.style.top = t + 'px';
+			}
+
+			//鼠标松开事件
+			document.onmouseup = function() {
+				//取消事件
+				document.onmousemove = null;
+				document.onmouseup = null;
+			}
+
+		}
+		
+		//Ajax验证
+		/*
+		1.获取input的值发送到服务器
+		2.坐下数据验证 有 返回y 没有返回n
+		3.根据返回信息 span显示对应的内容
+	*/
+	
+	//获取元素
+	var username=document.getElementById("loginname");
+	var info=document.getElementById("info");
+	
+	//通过失去焦点判断
+	username.onblur=function(){
+		//alert(username.value);
+		//获取input的value值
+		var uname=this.value;
+		
+		//将获取到的值发送到服务器做下数据验证
+		//赋值传递
+		Ajax().post('5.php','un='+uname,function(msg){
+				//alert(msg)
+				
+				//根据返回信息 判断span的值
+				if(msg=='y'){
+					//表示已注册
+					info.innerHTML='对不起，该用户名已注册';
+				}else{
+					//未注册
+					info.innerHTML='恭喜，该用户名可以使用';
+				}
+		
+		});
+	}
+
+	</script>
+
+</html>
